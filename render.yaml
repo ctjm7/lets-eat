@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: letseat
+    databaseName: letseat
+    user: letseat
 
 services:
   - type: web
-    name: mysite
+    name: letseat
     env: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn lets-eat.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: letseat
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
