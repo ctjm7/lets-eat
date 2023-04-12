@@ -1,0 +1,306 @@
+header {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(7, 52, 38);
+}
+
+h2 {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 27px;
+  text-align: center;
+  padding: 40px 0;
+  margin: 0 0;
+
+}
+
+body {
+  font-family: 'Lora', serif;
+  color: black;
+}
+
+.detail-desc {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color: rgb(7, 52, 38);
+}
+
+a:hover {
+  color: teal;
+}
+
+.fork-spoon {
+  height: 35px;
+  width: auto;
+}
+.navigation-list {
+  list-style-type: none;
+  display: flex;
+  padding-right: 20px;
+}
+
+.nav-list__item:first-child {
+  flex: 1 1 60%;
+}
+
+.nav-list__item:last-child, .nav-search, .nav-add, .item-2 {
+  margin-left: 20px;
+}
+
+div.home-img {
+  height: 600px;
+  width: auto;
+  text-align: center;
+  background-size: cover;
+}
+
+@keyframes expand {
+  0% {font-size: 5px;}
+  50%{font-size: 25px;}
+  100%{font-size: 70px;}
+}
+
+.eat {
+  display: inline-block;
+  position: relative;
+  font-size: 90px;
+  color: rgb(7, 52, 38);
+  margin: 250px 5px;
+  text-shadow: 5px 5px rgb(143, 227, 212);
+  animation: expand 1.2s linear;
+  /*background-color: rgb(249, 246, 230);
+  color: rgb(244, 196, 134);*/
+  color: white;
+  -webkit-text-stroke: 2px rgb(7, 52, 38);
+}
+
+footer {
+  font-size: 12px;
+  color: gray;
+}
+
+a.img-credit:link, a.img-credit:visited {
+  color: gray;
+  text-decoration: underline;
+}
+
+.recipe-list__item {
+  background-color: #dfece7;
+}
+
+.list-image {
+  width: 200px;
+  height: 200px;
+  align-items: center;
+}
+
+.list-name {
+  font-size: 18px;
+}
+
+.login-heading {
+  color: rgb(7, 52, 38);
+  margin-left: 50px;
+}
+
+.login {
+  position: relative;
+  color:rgb(7, 52, 38);
+  font-size: 25px;
+}
+
+.login-form {
+  position: absolute;
+  top: 40px;
+  left: 20%;
+}
+
+.login-button {
+  background-color: rgb(249, 246, 230);
+  margin-top: 25px;
+  color: rgb(7, 52, 38);
+  width: 80px;
+  border-color: rgb(7, 52, 38);
+  border-style: solid;
+}
+
+@supports (display: grid) {
+  .recipe-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  justify-content: space-evenly;
+  margin: 0 10%;
+  padding-bottom: 50px;
+  }
+
+  .recipe-list__item {
+  width: auto;
+  min-height: auto;
+  margin: 0;
+  padding: 5px;
+  padding: 10px;
+  text-align: center;
+  }
+}
+
+.logout-img {
+  position: relative;
+}
+
+h3.logout-text {
+  position: absolute;
+  top: 360px;
+  left: 37%;
+  color:rgb(7, 52, 38);
+  font-size: 30px;
+}
+
+img.detail-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 300px;
+  padding-bottom: 30px;
+}
+
+.detail-info {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  background-color: #dfece7;
+  padding: 25px 75px;
+}
+
+.search-body {
+  margin-left: 30px;
+
+}
+
+.search-heading {
+  padding: 20px 20px;
+  margin: 0 0;
+}
+
+.search-background {
+  background-color: #dfece7;
+  height: 100vh;
+  width: 100%;
+}
+
+.beige-background {
+  background-color: rgb(249, 246, 230);
+  height: 100%;
+  width: 100%;
+}
+
+.add-input {
+  background-color: #dfece7;
+  height: 500px;
+  width: 800px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.add-background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-button {
+  background-color: white;
+  color: rgb(7, 52, 38);
+  width: 80px;
+  border-color: rgb(7, 52, 38);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.about-hi {
+  font-family: 'Zen Tokyo Zoo', cursive;
+  color:rgb(7, 52, 38);
+  font-size: 60px;
+  text-align: center;
+}
+
+.about-background, .add-background {
+  height: 100vh;
+  margin: 0 0;
+  padding: 5px 0;
+}
+
+.about-text {
+  margin-top: 10%;
+  text-align: center;
+  position: relative;
+}
+
+.link-github {
+  padding-top: 36%;
+}
+
+.link-linkedin {
+  padding-top: 36%;
+}
+
+.link-portfolio {
+  margin-top: 20px;
+  font-family: 'Zen Tokyo Zoo', cursive;
+  font-size: 20px;
+}
+
+.portfolio-circle {
+  text-align: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  background-color: #63e9b6;
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 12%;
+}
+
+.github-circle {
+  text-align: center;
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  background-color: #b4f6dc;
+  position: absolute;
+  margin-left: 26%;
+  margin-top: 4%;
+}
+
+.linkedin-circle {
+  text-align: center;
+  border-radius: 50%;
+  height: 130px;
+  width: 130px;
+  background-color: rgb(244, 196, 134);
+  position: absolute;
+  margin-left: 65%;
+  margin-top: -1%;
+}
+
+.github-circle:hover, .portfolio-circle:hover, .linkedin-circle:hover {
+  transform: scale(2.5,2.5);
+}
+
+about.html, about.body, search.html, search.body {
+  margin: 0;
+  padding: 0;
+}
+about.body {
+  height: 100vh;
+  width: 100vw;
+}

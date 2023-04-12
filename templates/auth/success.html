@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Logout Success</title>
+		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{%static 'recipes/css/styles.css' %}" />
+	</head>
+  <header class="page-header">
+		<nav class="main-navigation">
+			<ul role="menubar" class="navigation-list">
+				<li role="presentation" class="nav-list__item">
+					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="{%static 'recipes/images/fork-spoon.png' %}"></a>
+				</li>
+				<li role="presentation" class="nav-list__item">
+					<a href="{%url 'login' %}" role="menuitem">Login</a>
+				</li>
+			</ul>
+		</nav>
+		<hr>
+  </header>
+  <body>
+		<div class="logout-img">
+		<img src="{%static 'recipes/images/logout-drawing.jpg' %}" width="100%" height="auto">
+    <h3 class="logout-text">You've successfully logged out</h3>
+		</div>
+  </body>
+
+</html>

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Recipes List</title>
+		<link rel="shortcut icon" href="static/recipes/images/favicon.ico" sizes="32x32">
+		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css'%}">
+	</head>
+
+  <header class="page-header">
+		<nav class="main-navigation">
+			<ul role="menubar" class="navigation-list">
+				<li role="presentation" class="nav-list__item">
+					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="../static/recipes/images/fork-spoon.png"></a>
+				</li>
+				<li role="presentation" class="nav-list__item nav-add">
+					<a href="{%url 'about' %}" role="menuitem">About</a>
+				</li>
+				<li role="presentation" class="nav-list__item nav-search">
+					<a href="{%url 'recipes:search' %}" role="menuitem">Search</a>
+				</li>
+				<li role="presentation" class="nav-list__item nav-add">
+					<a href="{%url 'recipes:add_recipe' %}" role="menuitem">Add Recipes</a>
+				</li>
+        <li role="presentation" class="nav-list__item">
+					<a href="{%url 'logout' %}" role="menuitem">Logout</a>
+				</li>
+			</ul>
+		</nav>
+		<hr>
+  </header>
+
+  <body>
+		<div class="beige-background">
+    <h2 class="list-heading">Recipes</h2>   {% comment%} HTML tag for heading  {% endcomment%}
+    <div class="recipe-list">
+
+    {% for object in object_list %} {% comment%} now go through the list element-by-element  {% endcomment%}
+
+			<div class="recipe-list__item">
+       <img class="list-image" src="{{object.pic.url}}" /> </br> {% comment%} display the picture of recipe  {% endcomment%}
+        <a class="list-name" href ="{{object.get_absolute_url}}"> {% comment%} add links to recipe names  {% endcomment%}
+        {{object.name}} {% comment%} print the name of recipe  {% endcomment%}</a>
+			</div>
+    {% endfor %}
+
+  	</div>
+		</div>
+  </body>
+</html>

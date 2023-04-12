@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Recipe Search</title>
+		<link rel="shortcut icon" href="static/recipes/images/favicon.ico" sizes="32x32">
+		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap"  rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css'%}">
+		<style>
+  		table, th, td {font-size:12pt; border:1px solid gray; border-collapse:collapse; text-align:left;}
+  		th, td {padding: 5px;}
+		</style>
+	</head>
+
+  <header class="page-header">
+		<nav class="main-navigation">
+			<ul role="menubar" class="navigation-list">
+				<li role="presentation" class="nav-list__item">
+					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="../static/recipes/images/fork-spoon.png"></a>
+				</li>
+				<li role="presentation" class="nav-list__item nav-add">
+					<a href="{%url 'about' %}" role="menuitem">About</a>
+				</li>
+				<li role="presentation" class="nav-list__item item-2">
+					<a href="{%url 'recipes:list' %}" role="menuitem">Recipes</a>
+				</li>
+				<li role="presentation" class="nav-list__item nav-add">
+					<a href="{%url 'recipes:add_recipe' %}" role="menuitem">Add Recipes</a>
+				</li>
+        <li role="presentation" class="nav-list__item">
+					<a href="{%url 'logout' %}" role="menuitem">Logout</a>
+				</li>
+			</ul>
+		</nav>
+    <hr>
+  </header>
+
+  <body>
+		<div  class="search-background">
+    <h1 class="search-heading">Search for Recipes</h1>
+		<div class="search-body">
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{recipe_form}}
+      <button type="submit">search</button>
+    </form>
+
+		<br>
+		<br>
+
+		{% if recipe_df %}
+			{{recipe_df | safe}}
+			<br>
+			<img class="chart" src="data:image/png;base64, {{chart | safe }}" style="padding-top: 50px;">
+		{% elif all_df %}
+			{{all_df | safe }}
+		{% else %}
+   		<h3> no data</h3>
+		{% endif %}
+		</div>
+		</div>
+		</div>
+  </body>
+
+</html>
