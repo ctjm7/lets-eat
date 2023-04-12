@@ -20,3 +20,4 @@ services:
         value: 4
       - key: PYTHON_VERSION
         value: 3.8.7
+      
