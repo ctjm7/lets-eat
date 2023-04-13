@@ -1,6 +1,6 @@
 databases:
   - name: letseat
-    databaseName: letseat
+    databaseName: letseat_a66k
     user: letseat
     plan: free
 
