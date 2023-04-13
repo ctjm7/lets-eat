@@ -22,3 +22,7 @@ services:
         value: 4
       - key: PYTHON_VERSION
         value: 3.8.7
+      - key: DB_EXTERNAL_URL
+        fromDatabase:
+          name: letseat
+          property: connectionString
