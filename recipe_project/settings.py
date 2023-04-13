@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'recipe_project.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(
-        os.environ.get('DB_EXTERNAL_URL'),
+         os.environ.get('DB_EXTERNAL_URL'),
         conn_max_age=600,
     )
 }
