@@ -80,13 +80,11 @@ WSGI_APPLICATION = 'recipe_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-DB_PASSWORD = os.getenv('DB_PASSWORD')
 
 DATABASES = {
     'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default='postgres://letseat:DB_PASSWORD@dpg-cgrfgn3k9u56e3mjosb0-a:5432/letseat',
-        conn_max_age=600
+        os.environ.get('DATABASE_URL'),
+        conn_max_age=600,
     )
 }
 
