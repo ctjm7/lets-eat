@@ -25,10 +25,13 @@ It allows users to create an account. They can add and modify recipes in their a
 ```
 asgiref             3.6.0
 backports.zoneinfo  0.2.1
+Brotli              1.0.9
 contourpy           1.0.7
 cycler              0.11.0
+dj-database-url     1.3.0
 Django              4.1.7
 fonttools           4.39.2
+gunicorn            20.1.0
 importlib-resources 5.12.0
 kiwisolver          1.4.4
 matplotlib          3.7.1
@@ -37,11 +40,14 @@ packaging           23.0
 pandas              1.5.3
 Pillow              9.4.0
 pip                 23.0.1
+psycopg2-binary     2.9.6
 pyparsing           3.0.9
 python-dateutil     2.8.2
 pytz                2023.2
 setuptools          67.1.0
 six                 1.16.0
 sqlparse            0.4.3
+typing_extensions   4.5.0
 wheel               0.38.4
+whitenoise          6.4.0
 zipp                3.15.0
