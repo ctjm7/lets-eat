@@ -43,6 +43,7 @@ def get_chart(chart_type, ingredients, number_recipes, **kwargs):
    plt.rcParams['figure.facecolor'] = '#DFECE7'
    ax.set_facecolor('white')
 
+   plt.setp(ax.get_xticklabels(), rotation=30, horizontalalalignment='right', fontsize='x-small')
    plt.show()
 
 

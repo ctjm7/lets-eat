@@ -197,6 +197,10 @@ img.detail-img {
   width: 100%;
 }
 
+.search-button {
+  margin: 20px 20px;
+}
+
 .beige-background {
   background-color: rgb(249, 246, 230);
   height: 100%;
