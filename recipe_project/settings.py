@@ -27,14 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-ml49cp(e)=yakpe
 # SECURITY WARNING: don't run with debug turned on in production!
 # SECURITY WARNING: don't run with debug turned on in production!
 
-if not IS_HEROKU:
-    DEBUG = True
-if IS_HEROKU:
-    DEBUG = True
-if IS_HEROKU:
-    ALLOWED_HOSTS = ['limitless-everglades-17623.herokuapp.com']
-else:
-    ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://limitless-everglades-17623.herokuapp.com/']
 
 # Application definition
 
