@@ -134,16 +134,16 @@ if not DEBUG:
     # and creating unique names for each version so they can safely be cached forever
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-'''
+
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static'),
 ]
-'''
 
+'''
 STATICFILES_DIR = [
     BASE_DIR / 'static'
 ]
-
+'''
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT= BASE_DIR / 'media'
