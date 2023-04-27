@@ -41,9 +41,8 @@
     {% for object in object_list %} {% comment%} now go through the list element-by-element  {% endcomment%}
 
 			<div class="recipe-list__item">
-       {% with 'recipes/images/'|add:object.pic_name|add:".jpg" as image_static %}
-				<img class="list-image" src="{% static image_static %}" /></br>
-				{% endwith %}
+				
+       <img class="list-image" src="{{object.pic.url}}" /> </br> {% comment%} display the picture of recipe  {% endcomment%}
 
         <a class="list-name" href ="{{object.get_absolute_url}}"> {% comment%} add links to recipe names  {% endcomment%}
         {{object.name}} {% comment%} print the name of recipe  {% endcomment%}</a>
