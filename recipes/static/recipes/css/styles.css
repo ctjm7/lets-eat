@@ -250,7 +250,7 @@ img.detail-img {
 }
 
 .link-github {
-  padding-top: 36%;
+  padding-top: 35%;
 }
 
 .link-linkedin {
@@ -277,8 +277,8 @@ img.detail-img {
 .github-circle {
   text-align: center;
   border-radius: 50%;
-  height: 120px;
-  width: 120px;
+  height: 110px;
+  width: 110px;
   background-color: #b4f6dc;
   position: absolute;
   margin-left: 26%;
