@@ -37,7 +37,7 @@
     <h2>{{object.name}}</h2>
       <div class="detail-info">
 
-        <img class="detail-img" src="{{object.pic_link}}" width="200" height="200" />
+        <img class="detail-img" src="{% static '' %}recipes/images/{{object.pic_name}}.jpg" width="200" height="200" />
 
         <div class="detail-desc">
           <b>Cooking Time: </b> {{object.cooking_time}} minutes<br>
