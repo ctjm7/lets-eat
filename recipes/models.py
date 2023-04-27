@@ -28,3 +28,7 @@ class Recipe(models.Model):
 
     def get_absolute_url(self):
        return reverse('recipes:detail', kwargs={'pk': self.pk})
+
+    def pic_name(self):
+      pic_name = (self.name).lower().replace(' ', '_')
+      return pic_name
