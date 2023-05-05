@@ -193,7 +193,7 @@ img.detail-img {
 
 .search-background {
   background-color: #dfece7;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -250,11 +250,13 @@ img.detail-img {
 }
 
 .link-github {
-  padding-top: 35%;
+  margin-top: 26%;
+  height: 50px;
+  width: 50px;
 }
 
 .link-linkedin {
-  padding-top: 36%;
+  padding-top: 35%;
 }
 
 .link-portfolio {
