@@ -48,7 +48,7 @@
 			<!--
 			 <img class="list-image" src="{% static 'recipes/images/'|add:object.pic_name|add:'.jpg' %}" /><br>
 			-->
-			<img class="list-image" src="../static/recipes/images/fork-spoon.png" alt="recipe image"> <br>
+			<img class="list-image" src="{{object.pic_name}}"/> <br>
 
         <a class="list-name" href ="{{object.get_absolute_url}}"> {% comment%} add links to recipe names  {% endcomment%}
         {{object.name}} {% comment%} print the name of recipe  {% endcomment%}</a>
