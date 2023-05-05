@@ -1,5 +1,4 @@
 {% load static %}
-{% get_static_prefix as STATIC_PREFIX %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -48,7 +47,9 @@
 			<!--
 			 <img class="list-image" src="{% static 'recipes/images/'|add:object.pic_name|add:'.jpg' %}" /><br>
 			-->
-			<img class="list-image" src="{{object.pic_name}}"/> <br>
+
+				<img class="list-image" src="{{object.pic.url}}"/> <br>
+
 
         <a class="list-name" href ="{{object.get_absolute_url}}"> {% comment%} add links to recipe names  {% endcomment%}
         {{object.name}} {% comment%} print the name of recipe  {% endcomment%}</a>

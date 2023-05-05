@@ -31,5 +31,4 @@ class Recipe(models.Model):
 
     def pic_name(self):
       pic_name = (self.name).lower().replace(' ', '_')
-      url = '../static/recipes/images/{}.jpg'.format(pic_name)
-      return url
+      return pic_name
