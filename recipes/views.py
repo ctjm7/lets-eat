@@ -18,12 +18,15 @@ def home(request):
 class RecipeListView(LoginRequiredMixin, ListView):
     model = Recipe
     template_name = 'recipes/main.html'
-    
+
     def get_context_data(self, *args, **kwargs):
+        instance = Recipe.objects.all()
         context = super(RecipeListView, self).get_context_data(*args, **kwargs)
-        context = {}
+        urls_list = []
         names_list = list(Recipe.objects.values_list('name', flat=True))
-        context['objects'] = Recipe.objects.all()
+
+        for i in instance:
+            urls_list.append(i.get_absolute_url)
 
         def name_to_jpg(data):
             pic_name = []
@@ -35,8 +38,11 @@ class RecipeListView(LoginRequiredMixin, ListView):
         pic_urls = os.listdir(os.path.join(settings.STATIC_ROOT, "recipes/images/"))
         pic_urls = ['recipes/images/'+ object_name for object_name in object_names]
 
-        context['pic_urls'] = pic_urls
+        data_list = [ {"pic_url":val[0], "url":val[1], "name":val[2]} for val in zip(pic_urls, urls_list, names_list)]
 
+        context = {
+            'data_list': data_list
+        }
         return context
 
 class RecipeDetailView(LoginRequiredMixin, DetailView):
