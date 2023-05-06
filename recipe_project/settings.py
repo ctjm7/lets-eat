@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-ml49cp(e)=yakpevh4xz)3w)6xuq6kv7g&3^xf^)gr-n3&p#%9')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#ALLOWED_HOSTS = ['.herokuapp.com']
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['.herokuapp.com']
+#ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'recipe_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-#DATABASE_URL = os.environ['DATABASE_URL']
-#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 DATABASES = {
     'default': {
@@ -143,4 +143,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/login/'
 
 # Heroku database
-#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
