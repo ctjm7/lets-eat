@@ -20,9 +20,10 @@ class RecipeListView(LoginRequiredMixin, ListView):
     template_name = 'recipes/main.html'
 
     def get_context_data(self, *args, **kwargs):
-        instance = Recipe.objects.all()
         context = super(RecipeListView, self).get_context_data(*args, **kwargs)
         urls_list = []
+        pic_urls = []
+        instance = Recipe.objects.all()
         names_list = list(Recipe.objects.values_list('name', flat=True))
 
         for i in instance:
@@ -31,14 +32,21 @@ class RecipeListView(LoginRequiredMixin, ListView):
         def name_to_jpg(data):
             pic_name = []
             for x in data:
-                pic_name.append(str(x).replace(' ', '_') + '.jpg')
+                pic_name.append(str(x).lower().replace(' ', '_') + '.jpg')
             return pic_name
 
         object_names = name_to_jpg(names_list)
-        pic_urls = os.listdir(os.path.join(settings.STATIC_ROOT, "recipes/images/"))
+
+        for object_name in object_names:
+            path = 'recipes/images/' + object_name
+            join_path = os.listdir(os.path.join(settings.STATIC_ROOT, path))
+            pic_urls.append(join_path)
+
+
+        #pic_urls = os.listdir(os.path.join(settings.STATIC_ROOT, "recipes/images/"))
         pic_urls = ['recipes/images/'+ object_name for object_name in object_names]
 
-        data_list = [ {"pic_url":val[0], "url":val[1], "name":val[2]} for val in zip(pic_urls, urls_list, names_list)]
+        #data_list = [ {"pic_url":val[0], "url":val[1], "name":val[2]} for val in zip(pic_urls, urls_list, names_list)]
 
         context = {
             'data': zip(pic_urls, urls_list, names_list)
