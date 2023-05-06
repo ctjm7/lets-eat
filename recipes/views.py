@@ -7,6 +7,9 @@ from .forms import RecipeSearchForm, AddRecipeForm
 import pandas as pd
 import string
 from .utils import get_chart
+import os
+from django.conf import settings
+
 
 # Create your views here.
 def home(request):
@@ -15,6 +18,26 @@ def home(request):
 class RecipeListView(LoginRequiredMixin, ListView):
     model = Recipe
     template_name = 'recipes/main.html'
+    
+    def get_context_data(self, *args, **kwargs):
+        context = super(RecipeListView, self).get_context_data(*args, **kwargs)
+        context = {}
+        names_list = list(Recipe.objects.values_list('name', flat=True))
+        context['objects'] = Recipe.objects.all()
+
+        def name_to_jpg(data):
+            pic_name = []
+            for x in data:
+                pic_name.append(str(x).replace(' ', '_') + '.jpg')
+            return pic_name
+
+        object_names = name_to_jpg(names_list)
+        pic_urls = os.listdir(os.path.join(settings.STATIC_ROOT, "recipes/images/"))
+        pic_urls = ['recipes/images/'+ object_name for object_name in object_names]
+
+        context['pic_urls'] = pic_urls
+
+        return context
 
 class RecipeDetailView(LoginRequiredMixin, DetailView):
     model = Recipe

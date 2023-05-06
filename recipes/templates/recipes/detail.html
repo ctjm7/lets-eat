@@ -36,10 +36,10 @@
 		<div class="beige-background">
     <h2>{{object.name}}</h2>
       <div class="detail-info">
-				<!--
+<!--
         <img class="detail-img" src="{{object.pic_name}}" width="200" height="200"/>
-				-->
 
+-->
 				{% with 'recipes/images/'|add:object.pic_name|add:".jpg" as image_static %}
 					<img class="detail-img" src="{% static image_static %}" width="200" height="200"/>
 				{% endwith %}

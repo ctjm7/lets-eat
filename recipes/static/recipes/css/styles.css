@@ -193,7 +193,7 @@ img.detail-img {
 
 .search-background {
   background-color: #dfece7;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -250,7 +250,7 @@ img.detail-img {
 }
 
 .link-github {
-  padding-top: 34%;
+  padding-top: 31%;
 }
 
 .link-linkedin {
@@ -296,7 +296,7 @@ img.detail-img {
   margin-top: -1%;
 }
 
-.github-circle:hover, .portfolio-circle:hover, .linkedin-circle:hover {
+.circle:hover {
   transform: scale(2.5,2.5);
 }
 
