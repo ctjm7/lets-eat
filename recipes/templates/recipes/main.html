@@ -53,13 +53,13 @@
     {% endfor %}{% endfor %}
 		-->
 		<div class="recipe-list">
-			{% for data in data_list %}
+			{% for x, y, z in data %}
 			<div class="recipe-list__item">
 
-   			<img class="list-image" src="{% static data.pic_url %}" alt="recipe image" /><br>
+   			<img class="list-image" src="{% static x %}" alt="recipe image" /><br>
 
-        <a class="list-name" href ="{{data.url}}"> {% comment%} add links to recipe names  {% endcomment%}
-        {{data.name}} {% comment%} print the name of recipe  {% endcomment%}</a>
+        <a class="list-name" href ="{{y}}"> {% comment%} add links to recipe names  {% endcomment%}
+        {{z}} {% comment%} print the name of recipe  {% endcomment%}</a>
 			</div>
 			{% endfor %}
   	</div>
