@@ -14,7 +14,7 @@
 		<nav class="main-navigation">
 			<ul role="menubar" class="navigation-list">
 				<li role="presentation" class="nav-list__item">
-					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="{%static 'recipes/images/fork-spoon.png'}"></a>
+					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="https://recipeapp-cf.s3.us-west-2.amazonaws.com/static/recipes/images/fork-spoon.png"></a>
 				</li>
 
 				<li role="presentation" class="nav-list__item">
@@ -26,7 +26,8 @@
   </header>
   <body>
 		<div class="container">
-		<div class="home-img" style="background-image: url("{%static 'recipes/images/home-drawing.jpg' %}")>
+		<div class="home-img" style="background-image: url('{%static &quot;recipes/images/home-drawing.jpg&quot; %}')">
+
 			<p class="eat">Let's Eat!</p>
 		</div>
 		</div>
