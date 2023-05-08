@@ -43,7 +43,6 @@ class RecipeListView(LoginRequiredMixin, ListView):
             pic_urls.append(path)
 
         '''
-        pic_urls = os.listdir(os.path.join(settings.STATIC_ROOT, "recipes/images/"))
         pic_urls = ['recipes/images/'+ object_name for object_name in object_names]
         data_list = [ {"pic_url":val[0], "url":val[1], "name":val[2]} for val in zip(pic_urls, urls_list, names_list)]
         '''
