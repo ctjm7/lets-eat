@@ -8,7 +8,7 @@ class Recipe(models.Model):
     cooking_time = models.PositiveIntegerField(help_text='in minutes', verbose_name='Cooking Time')
     ingredients = models.CharField(max_length=350, verbose_name='Ingredients')
     description = models.TextField(default='')
-    pic = models.ImageField(upload_to='media' default='no_pic.jpeg')
+    pic = models.ImageField(upload_to='media', default='no_pic.jpeg')
 
     #@property
     def calculate_difficulty(self):
