@@ -7,14 +7,14 @@
 		<title>Recipe Home</title>
 		<link rel="shortcut icon" href="static/recipes/images/favicon.ico" sizes="32x32">
 		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="recipeapp-cf.s3.amazonaws.com/static/recipes/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="{%static 'recipes/css/styles.css' %}">
 	</head>
 
   <header class="page-header">
 		<nav class="main-navigation">
 			<ul role="menubar" class="navigation-list">
 				<li role="presentation" class="nav-list__item">
-					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="recipeapp-cf.s3.amazonaws.com/static/recipes/images/fork-spoon.png"></a>
+					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="{%static 'recipes/images/fork-spoon.png'}"></a>
 				</li>
 
 				<li role="presentation" class="nav-list__item">
@@ -26,7 +26,7 @@
   </header>
   <body>
 		<div class="container">
-		<div class="home-img" style="background-image: url('recipeapp-cf.s3.amazonaws.com/static/recipes/images/home-drawing.jpg')">
+		<div class="home-img" style="background-image: url("{%static 'recipes/images/home-drawing.jpg' %}")>
 			<p class="eat">Let's Eat!</p>
 		</div>
 		</div>
