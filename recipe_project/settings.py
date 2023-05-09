@@ -134,7 +134,7 @@ if USE_S3:
     AWS_HEADERS = {'Access-Control-Allow-Origin': '*'}
     AWS_QUERYSTRING_AUTH = False
     AWS_S3_FILE_OVERWRITE = False
-    AWS_S3_REGION_NAME = 'us-west-2'
+    AWS_S3_REGION_NAME = 'us-east-1'
     # s3 static settings
     AWS_LOCATION = 'static'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
