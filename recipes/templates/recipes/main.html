@@ -14,7 +14,7 @@
 		<nav class="main-navigation">
 			<ul role="menubar" class="navigation-list">
 				<li role="presentation" class="nav-list__item">
-					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="https://recipeapp-cf.s3.us-west-2.amazonaws.com/static/recipes/images/fork-spoon.png"></a>
+					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="https://letseat-recipe.s3.us-west-2.amazonaws.com/static/recipes/images/fork-spoon.png"></a>
 				</li>
 				<li role="presentation" class="nav-list__item nav-add">
 					<a href="{%url 'about' %}" role="menuitem">About</a>
@@ -35,32 +35,19 @@
 
   <body>
 		<div class="beige-background">
-    <h2 class="list-heading">Recipes</h2>   {% comment%} HTML tag for heading  {% endcomment%}
+    	<h2 class="list-heading">Recipes</h2>   {% comment%} HTML tag for heading  {% endcomment%}
 
-			<!--
-		<div class="recipe-list">
-			{% for x, y, z in data %}
-			<div class="recipe-list__item">
+			<div class="recipe-list">
+			{% for object in object_list %} {% comment%} now go through the list element-by-element  {% endcomment%}
 
-   			<img class="list-image" src="{% static x %}" alt="recipe image" /><br>
-
-        <a class="list-name" href ="{{y}}"> {% comment%} add links to recipe names  {% endcomment%}
-        {{z}} {% comment%} print the name of recipe  {% endcomment%}</a>
-			</div>
-			{% endfor %}
-
-			-->
-		<div class="recipe-list">
-		{% for object in object_list %} {% comment%} now go through the list element-by-element  {% endcomment%}
-
- 			<div class="recipe-list__item">
-        <img class="list-image" src="{{object.pic.url}}" /> </br> {% comment%} display the picture of recipe  {% endcomment%}
-         <a class="list-name" href ="{{object.get_absolute_url}}"> {% comment%} add links to recipe names  {% endcomment%}
+ 				<div class="recipe-list__item">
+        	<img class="list-image" src="{{object.pic.url}}" /> </br> {% comment%} display the picture of recipe  {% endcomment%}
+         	<a class="list-name" href ="{{object.get_absolute_url}}"> {% comment%} add links to recipe names  {% endcomment%}
          {{object.name}} {% comment%} print the name of recipe  {% endcomment%}</a>
- 			</div>
-     {% endfor %}
+ 				</div>
+    	{% endfor %}
 
-  	</div>
+  		</div>
 		</div>
   </body>
 </html>

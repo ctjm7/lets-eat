@@ -14,7 +14,7 @@
 		<nav class="main-navigation">
 			<ul role="menubar" class="navigation-list">
 				<li role="presentation" class="nav-list__item">
-					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="https://recipeapp-cf.s3.us-west-2.amazonaws.com/static/recipes/images/fork-spoon.png"></a>
+					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="https://letseat-recipe.s3.us-west-2.amazonaws.com/static/recipes/images/fork-spoon.png"></a>
 				</li>
 				<li role="presentation" class="nav-list__item nav-add">
 					<a href="{%url 'about' %}" role="menuitem">About</a>
@@ -36,15 +36,15 @@
   <body>
 		<div class="beige-background add-background">
     	<h2>Add a Recipe</h2>
-				<div class="add-input">
-					<form action="" method="POST">
-						{% csrf_token %}
-						Recipe Name: {{form.add_name}}<br/><br/>
-						Cooking Time (in minutes): {{form.add_cooking_time}}<br/><br/>
-						Ingredients (enter each ingredient separated by a comma):<br/><br/>{{form.add_ingredients}}<br/><br/>
-						Directions:<br/>{{form.add_description}}<br/>
-						<input class="add-button" type="submit" value="Save"/>
-					</form>
+			<div class="add-input">
+				<form action="" method="POST">
+					{% csrf_token %}
+					Recipe Name: {{form.add_name}}<br/><br/>
+					Cooking Time (in minutes): {{form.add_cooking_time}}<br/><br/>
+					Ingredients (enter each ingredient separated by a comma):<br/><br/>{{form.add_ingredients}}<br/><br/>
+					Directions:<br/>{{form.add_description}}<br/>
+					<input class="add-button" type="submit" value="Save"/>
+				</form>
 			</div>
 		</div>
   </body>

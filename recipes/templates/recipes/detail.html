@@ -14,7 +14,7 @@
 		<nav class="main-navigation">
 			<ul role="menubar" class="navigation-list">
 				<li role="presentation" class="nav-list__item">
-					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="https://recipeapp-cf.s3.us-west-2.amazonaws.com/static/recipes/images/fork-spoon.png"></a>
+					<a href="{%url 'recipes:home' %}"role="menuitem"><img class="fork-spoon" src="https://letseat-recipe.s3.us-west-2.amazonaws.com/static/recipes/images/fork-spoon.png"></a>
 				</li>
 				<li role="presentation" class="nav-list__item item-2">
 					<a href="{%url 'recipes:list' %}" role="menuitem">Recipes</a>
@@ -38,12 +38,7 @@
       <div class="detail-info">
 
         <img class="detail-img" src="{{object.pic.url}}" width="200" height="200"/>
-
-				<!--
-				{% with 'recipes/images/'|add:object.pic_name|add:".jpg" as image_static %}
-					<img class="detail-img" src="{% static image_static %}" width="200" height="200"/>
-				{% endwith %}
-				-->
+				
         <div class="detail-desc">
           <b>Cooking Time: </b> {{object.cooking_time}} minutes<br>
           <br>

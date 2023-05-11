@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="{%static 'recipes/css/styles.css' %}" />
 	</head>
 
-   <h1 class="login-heading">Login</h1>          {% comment %} print heading {% endcomment %}
+   <h1 class="login-heading">Login</h1> {% comment %} print heading {% endcomment %}
    <hr>
    {% comment %} check for error message {% endcomment %}
    {% if error_message %}
@@ -20,21 +20,20 @@
    {% comment %} print form {% endcomment %}
    <div class="login">
       <img src="{%static 'recipes/images/login-drawing.jpg' %}" width="100%" height="auto">
-   <form class="login-form" action="" method="POST" >
-      {% comment %} add Django security token {% endcomment %}
-      {% csrf_token %}
+      <form class="login-form" action="" method="POST" >
+         {% comment %} add Django security token {% endcomment %}
+         {% csrf_token %}
 
-      {% comment %} print form received from view  {% endcomment %}
+         {% comment %} print form received from view  {% endcomment %}
 
-      <p>Username:</p>
-      {{form.username}}
-      <p>Password:</p>
-      {{form.password}}
-      <br>
+         <p>Username:</p>
+         {{form.username}}
+         <p>Password:</p>
+         {{form.password}}
+         <br>
 
-      {% comment %} add button {% endcomment %}
-      <button class="login-button" type="submit" >Login</button>
-   </form>
+         {% comment %} add button {% endcomment %}
+         <button class="login-button" type="submit" >Login</button>
+      </form>
    </div>
-
 </html>
